@@ -35,7 +35,7 @@
       text-transform: none;
     }
     .tagline {
-      margin: 0 0 30px;         /* reduced from 60 -> 30 */
+      margin: 0 0 30px;         
       font-size: 1.2rem;
       letter-spacing: 2px;
       white-space: nowrap;
@@ -48,7 +48,7 @@
     }
     .buttons a {
       background: #000;
-      color: #fff;              /* text is now white */
+      color: #fff;
       padding: 10px 18px;
       text-decoration: none;
       border: 2px solid #01FDFD;
@@ -62,7 +62,7 @@
     }
     section {
       max-width: 600px;
-      margin: 120px auto 0;     /* increased top margin to 120px */
+      margin: 120px auto 0;
       text-align: left;
     }
     section h2 {
@@ -87,53 +87,37 @@
       text-decoration: underline;
     }
 
-    /* 2. Base elements already set up… now add responsiveness */
+    /* Responsive tweaks */
     @media (max-width: 480px) {
       body {
         padding: 20px 10px;
       }
-
-      /* Shrink the logo a bit and keep it centered */
       .logo {
         width: 80%;
         max-width: 200px;
         margin-bottom: 16px;
       }
-
-      /* Scale down the main title */
       h1 {
         font-size: 3rem;
         letter-spacing: 2px;
         margin-bottom: 40px;
       }
-      .logo-inline {
-        max-width: 50px;
-        width: 12%;
-      }
-
-      /* Allow the tagline to wrap and scale */
       .tagline {
         font-size: 1rem;
         letter-spacing: 1px;
-        margin-bottom: 20px;  /* a bit tighter */
-        white-space: normal;  /* allow wrapping on very small devices */
+        margin-bottom: 20px;
+        white-space: normal;
         overflow-wrap: break-word;
       }
-
-      /* Make the buttons container full-width so buttons never get cut off */
       .buttons {
         width: 100%;
         padding: 0;
         flex-direction: column;
         gap: 10px;
       }
-      /* Ensure each button fills that container */
       .buttons a {
         width: 100%;
-        box-sizing: border-box;
       }
-
-      /* Bring the “world record gains” section closer and give side padding */
       section {
         margin-top: 80px;
         padding: 0 10px;
@@ -148,12 +132,11 @@
 </head>
 <body>
 
+  <!-- Logo above the heading -->
   <img src="assets/logo.png" alt="any% logo" class="logo">
 
-  <h1 class="title-with-logo">
-    <span>any</span>
-    <img src="assets/logo.png" alt="%" class="logo-inline">
-  </h1>
+  <!-- Simple text heading -->
+  <h1>any%</h1>
 
   <p class="tagline">start your run now and achieve world record gains</p>
 
