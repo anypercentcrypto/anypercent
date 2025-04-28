@@ -7,6 +7,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    /* 1. Ensure padding and borders don’t push you over 100% width */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    /* Core styles */
     body {
       margin: 0;
       background: #111;
@@ -80,13 +86,75 @@
     section ul li a:hover {
       text-decoration: underline;
     }
+
+    /* 2. Base elements already set up… now add responsiveness */
+    @media (max-width: 480px) {
+      body {
+        padding: 20px 10px;
+      }
+
+      /* Shrink the logo a bit and keep it centered */
+      .logo {
+        width: 80%;
+        max-width: 200px;
+        margin-bottom: 16px;
+      }
+
+      /* Scale down the main title */
+      h1 {
+        font-size: 3rem;
+        letter-spacing: 2px;
+        margin-bottom: 40px;
+      }
+      .logo-inline {
+        max-width: 50px;
+        width: 12%;
+      }
+
+      /* Allow the tagline to wrap and scale */
+      .tagline {
+        font-size: 1rem;
+        letter-spacing: 1px;
+        margin-bottom: 20px;  /* a bit tighter */
+        white-space: normal;  /* allow wrapping on very small devices */
+        overflow-wrap: break-word;
+      }
+
+      /* Make the buttons container full-width so buttons never get cut off */
+      .buttons {
+        width: 100%;
+        padding: 0;
+        flex-direction: column;
+        gap: 10px;
+      }
+      /* Ensure each button fills that container */
+      .buttons a {
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      /* Bring the “world record gains” section closer and give side padding */
+      section {
+        margin-top: 80px;
+        padding: 0 10px;
+        max-width: 100%;
+      }
+      section h2 {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+      }
+    }
   </style>
 </head>
 <body>
 
   <img src="assets/logo.png" alt="any% logo" class="logo">
 
-  <h1>any%</h1>
+  <h1 class="title-with-logo">
+    <span>any</span>
+    <img src="assets/logo.png" alt="%" class="logo-inline">
+  </h1>
+
   <p class="tagline">start your run now and achieve world record gains</p>
 
   <div class="buttons">
@@ -96,31 +164,31 @@
     <a href="#" target="_blank">Coingecko (coming soon)</a>
   </div>
 
-<section>
-  <h2>world record any% leaderboard</h2>
-  <ul>
-    <li>
-      <a href="https://cryptopotato.com/trader-turns-727-into-2-24m-trading-goat-meme-coin-expert-says-flockerz-could-be-the-next-crypto-to-pump/">
-        Trader turns $727 into $2.24m trading GOAT meme coin
-      </a>
-    </li>
-    <li>
-      <a href="https://cointelegraph.com/news/crypto-trader-9-m-profit-3-days-3000-fold-return-on-investment">
-        Crypto trader profits $9m from $3000 in just 3 days
-      </a>
-    </li>
-    <li>
-      <a href="https://bitcoinist.com/solana-meme-coin-trader/">
-        Solana Meme Coin Trader Turns $1,800 Into $11 Million, Here’s How
-      </a>
-    </li>
-    <li>
-      <a href="https://nymag.com/intelligencer/2022/01/crypto-trader-meme-coin-millionaire.html" target="_blank">
-        Meme coin trader turns $7 500 into $500 000 in 2 days
-      </a>
-    </li>
-  </ul>
-</section>
+  <section>
+    <h2>world record any% leaderboard</h2>
+    <ul>
+      <li>
+        <a href="https://cryptopotato.com/trader-turns-727-into-2-24m-trading-goat-meme-coin-expert-says-flockerz-could-be-the-next-crypto-to-pump/">
+          Trader turns $727 into $2.24m trading GOAT meme coin
+        </a>
+      </li>
+      <li>
+        <a href="https://cointelegraph.com/news/crypto-trader-9-m-profit-3-days-3000-fold-return-on-investment">
+          Crypto trader profits $9m from $3000 in just 3 days
+        </a>
+      </li>
+      <li>
+        <a href="https://bitcoinist.com/solana-meme-coin-trader/">
+          Solana Meme Coin Trader Turns $1,800 Into $11 Million, Here’s How
+        </a>
+      </li>
+      <li>
+        <a href="https://nymag.com/intelligencer/2022/01/crypto-trader-meme-coin-millionaire.html" target="_blank">
+          Meme coin trader turns $7 500 into $500 000 in 2 days
+        </a>
+      </li>
+    </ul>
+  </section>
 
 </body>
 </html>
